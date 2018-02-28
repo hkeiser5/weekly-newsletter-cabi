@@ -10,18 +10,10 @@
 	
 	.column {
 		padding:0 15px 0 15px;
+		flex-grow: 1;
 		
 	}
-	//determine number of siblings (they don't even have to be divs!) and adjust width column accordingly max 12 columns
-	@for $i from 1 through 12 {
-		.column:first-child:nth-last-child(#{$i}),
-		.column:first-child:nth-last-child(#{$i})~.column {
-			$value: 100%/$i;
-			width: #{$value};
-			max-width: #{$value};
-		}
-		
-	}
+
 
 }
 
