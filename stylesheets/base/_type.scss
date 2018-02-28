@@ -109,6 +109,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
 //Roboto condensed weights and styles: 300, 400, 700, normal and italic
 //Suranna only has one weight 400
 /*-----------------------variables--------------------*/
@@ -118,3 +120,18 @@ $font-justlovely: 'Just Lovely','Georgia', serif;
 $font-lovelyExtras: 'Just Lovely Extras', 'Just Lovely','Geogia', serif;
 $font-Roboto: 'Roboto Condensed', 'Arial Narrow', sans-serif;
 $font-Modern: 'Suranna', 'Times New Roman', serif;
+
+//typeography
+p {//book
+	font-family: $font-archerB;
+	
+	b,strong {//semibold
+		font-family: $font-archer;
+		font-weight: 600;
+		font-style: normal;
+	}
+	em,i {
+		font-family: $font-archerB;
+		font-style: italic;
+	}
+}

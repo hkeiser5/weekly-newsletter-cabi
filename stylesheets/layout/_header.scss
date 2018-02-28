@@ -1,0 +1,21 @@
+/* header */
+
+header {
+	div.masthead{
+		width: 64%;
+		position: relative;		
+	}
+	p.edition {
+	font-family: $font-Roboto;
+	font-weight: 100;
+	font-size: 1.5vw;
+	color: $cabiPink;
+	position: absolute;
+	top: 11%;
+	right: .4%;
+	text-align: right;
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: .1em;	
+	}
+}
