@@ -6,11 +6,13 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 10px 15px 0 15px;//figure out padding on edges depending on window size
+	//padding: 10px 15px 0 15px;//figure out padding on edges depending on window size
 	
 	.column {
-		padding:0 15px 0 15px;
-		flex-grow: 1;
+		//padding:0 15px 0 15px;
+		flex: 1 1 0;
+		min-width: 150px;
+	
 		
 	}
 
@@ -19,5 +21,5 @@
 
 		//also determine padding based on width as well
 
-//loop for how many columns we have, max 12, then creates width & max width based on it
+//create js that determines the parent width, then determines the width of all columns depending on how many siblings and divisors This will work regardless of how many columns, and anywhere on a page.
 

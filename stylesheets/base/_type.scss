@@ -1,24 +1,24 @@
 /* fonts */
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-Bold.woff2') format('woff2'),
-        url('Archer-Bold.woff') format('woff');
+    src: url('../fonts/Archer-Bold.woff2') format('woff2'),
+        url('../fonts/Archer-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-BoldItalic.woff2') format('woff2'),
-        url('Archer-BoldItalic.woff') format('woff');
+    src: url('../fonts/Archer-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Archer-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-LightItalic.woff2') format('woff2'),
-        url('Archer-LightItalic.woff') format('woff');
+    src: url('../fonts/Archer-LightItalic.woff2') format('woff2'),
+        url('../fonts/Archer-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
@@ -26,16 +26,16 @@
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-Semibold.woff2') format('woff2'),
-        url('Archer-Semibold.woff') format('woff');
+    src: url('../fonts/Archer-Semibold.woff2') format('woff2'),
+        url('../fonts/Archer-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-Medium.woff2') format('woff2'),
-        url('Archer-Medium.woff') format('woff');
+    src: url('../fonts/Archer-Medium.woff2') format('woff2'),
+        url('../fonts/Archer-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -43,32 +43,32 @@
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-Thin.woff2') format('woff2'),
-        url('Archer-Thin.woff') format('woff');
+    src: url('../fonts/Archer-Thin.woff2') format('woff2'),
+        url('../fonts/Archer-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-Light.woff2') format('woff2'),
-        url('Archer-Light.woff') format('woff');
+    src: url('../fonts/Archer-Light.woff2') format('woff2'),
+        url('../fonts/Archer-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-SemiboldItalic.woff2') format('woff2'),
-        url('Archer-SemiboldItalic.woff') format('woff');
+    src: url('../fonts/Archer-SemiboldItalic.woff2') format('woff2'),
+        url('../fonts/Archer-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Archer Book';
-    src: url('Archer-BookItalic.woff2') format('woff2'),
-        url('Archer-BookItalic.woff') format('woff');
+    src: url('../fonts/Archer-BookItalic.woff2') format('woff2'),
+        url('../fonts/Archer-BookItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
@@ -76,8 +76,8 @@
 
 @font-face {
     font-family: 'Archer';
-    src: url('Archer-MediumItalic.woff2') format('woff2'),
-        url('Archer-MediumItalic.woff') format('woff');
+    src: url('../fonts/Archer-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Archer-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
@@ -85,8 +85,8 @@
 
 @font-face {
     font-family: 'Archer Book';
-    src: url('Archer-Book.woff2') format('woff2'),
-        url('Archer-Book.woff') format('woff');
+    src: url('../fonts/Archer-Book.woff2') format('woff2'),
+        url('../fonts/Archer-Book.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -96,16 +96,16 @@
 
 @font-face {
     font-family: 'Just Lovely';
-    src: url('JustLovely.woff2') format('woff2'),
-        url('JustLovely.woff') format('woff');
+    src: url('../fonts/JustLovely.woff2') format('woff2'),
+        url('../fonts/JustLovely.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Just Lovely Extras';
-    src: url('JustLovelyExtras.woff2') format('woff2'),
-        url('JustLovelyExtras.woff') format('woff');
+    src: url('../fonts/JustLovelyExtras.woff2') format('woff2'),
+        url('../fonts/JustLovelyExtras.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
