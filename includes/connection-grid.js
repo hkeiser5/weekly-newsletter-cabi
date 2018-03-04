@@ -39,9 +39,22 @@ function columnwidth(){
 		
 		//determine width of columns based on factors, baseWidth, and myWidth
 		//first check if all columns will fit in space, if so do nothing
-		if(baseWidth*myLength < myWidth || myFactors.length === 2){
-			//do nothing everything fits or will go to default min-width of 150px for prime number of columns
-
+		if(baseWidth*myLength < myWidth){
+			//do nothing everything fits 
+			
+			//do some different math for prime number of columns, lets set it up so that it tries to evenly spread the groups of columns, like a row of 6 then 5, or 2 rows of 4 then a row of 3, ect.
+		} else if (myFactors.length === 2){
+				   for (let i=2; i < myLength; i++){
+					   let val = Math.ceil(Math.round(myLength/i));
+					   if (val*baseWidth < myWidth && val !== 1){ //if equal to one, let it default to normal widths/distributions
+						   for (let i=0; i<myLength; i++){
+							let v = 100/val;
+							allMyChildren[i].style.minWidth = v + '%';
+							}
+						   break;
+					   }
+				   }
+				   
 		} else if (myWidth > baseWidth){ // here we determine how much space we have and divide columns accordingly
 			for (let value of myFactors){
 				if (value*baseWidth < myWidth && myWidth > 320){ //if smaller than 320 only allow single columns
