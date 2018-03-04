@@ -1,6 +1,11 @@
 // JavaScript Document
 /*jslint node: true */
+/*jshint esversion: 6 */
 'use strict';
+
+
+
+
 
 /* grid algorythm that determines how many .column elements in a .row. sees how big the row is. then determines width of the .column elements based on space, and if it has any denominators based on amount to section the widths in even amounts.*/
 
@@ -17,40 +22,75 @@ function columnwidth(){
 		let myWidth = e.offsetWidth;
 		
 		//find direct children columns and how many there are
-		let allMyChildren = e.querySelectorAll(':scope >.column');//only selects the direct children of element
+		let myChildren = e.querySelectorAll(':scope >.column');//only selects the direct children of element
+		//turn nodelist into actual array
+		let allMyChildren = [].slice.call(myChildren);
+
 		let myLength = allMyChildren.length;
 		
 		//find all the factors for my Length, take a number then try to divide it equally by every number smaller then itself, each success is a factor and can be put into an array.
 		let myFactors = [];
-		for (let num = myLength - 1; num > 0; num--){	
+		for (let num = myLength ; num > 0; num--){	
 			if (myLength % num === 0){
-				myFactors.push(num);//this array will have all positive factors (outside of self), and will result in 1 length for primes.
+				myFactors.push(num);//this array will have all positive factors, and will result in 2 length for primes.
 			}
 		}
 		
 		
 		//determine width of columns based on factors, baseWidth, and myWidth
 		//first check if all columns will fit in space, if so do nothing
-		if(baseWidth*myLength < myWidth || myFactors.length === 1){
+		if(baseWidth*myLength < myWidth || myFactors.length === 2){
 			//do nothing everything fits or will go to default min-width of 150px for prime number of columns
 
-		} else if {// here we determine how much space we have and divide columns accordingly
+		} else if (myWidth > baseWidth){ // here we determine how much space we have and divide columns accordingly
 			for (let value of myFactors){
-				if (value*baseWidth < myWidth){
+				if (value*baseWidth < myWidth && myWidth > 320){ //if smaller than 320 only allow single columns
 						for (let i=0; i<myLength; i++){
-							allMyChildren[i].style.minWidth === 100/value + '%';
+							let v = 100/value;
+							allMyChildren[i].style.minWidth = v + '%';
 						}
-					break;
+					break; 
 				}
 			}
 		} else {
 			for (let i=0; i<myLength; i++){
-				allMyChildren[i].style.minWidth === 100 + '%';
+				allMyChildren[i].style.minWidth = 100 + '%';
 			}
 		}
 		
 	});
-}
+}//end of column width function
+
+
+//timer function to use in things like window resize.
+var timeout;
+
+
+// Listen for resize events
+window.addEventListener('resize', function  () {
+
+	// If timer is null, reset it to 66ms and run your functions.
+	// Otherwise, wait until timer is cleared
+	if ( !timeout ) {
+		timeout = setTimeout(function() {
+
+			// Reset timeout
+			timeout = null;
+			
+			columnwidth();
+
+
+		}, 66);
+	}
+}, false);
+
+
+
+
+
+
+
+
 
 function loadfunctions(){
 	columnwidth();
