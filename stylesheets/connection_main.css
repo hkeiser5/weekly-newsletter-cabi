@@ -1,4 +1,5 @@
 /* Scss Document */
+/* Mixins */
 /* colors */
 /* fonts */
 @font-face {
@@ -88,9 +89,145 @@ p b, p strong {
   font-weight: 600;
   font-style: normal;
 }
+p b em, p b i, p strong em, p strong i {
+  font-family: "Archer", "Georgia", serif;
+  font-weight: 600;
+  font-style: italic;
+}
 p em, p i {
   font-family: "Archer Book", "Archer", "Georgia", serif;
   font-style: italic;
+}
+p em b, p em strong, p i b, p i strong {
+  font-family: "Archer", "Georgia", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Archer", "Georgia", serif;
+  font-style: bold;
+}
+
+h1 {
+  color: #ff99a7;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h1 + h2 {
+  margin: 1% 0 0 0;
+}
+h1 + p {
+  margin-top: 5%;
+}
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.75em;
+  }
+}
+@media only screen and (min-width: 321px) {
+  h1 {
+    font-size: 1.75em;
+  }
+}
+@media only screen and (min-width: 700px) {
+  h1 {
+    font-size: 1.9em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 3vw;
+  }
+}
+
+h2 + p {
+  margin-top: 5%;
+}
+@media only screen and (max-width: 320px) {
+  h2 {
+    font-size: 1.25em;
+    margin: 2.5% 0 0 0;
+  }
+}
+@media only screen and (min-width: 321px) {
+  h2 {
+    font-size: 1.25em;
+    margin: 2.5% 0 0 0;
+  }
+}
+@media only screen and (min-width: 700px) {
+  h2 {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 900px) {
+  h2 {
+    font-size: 2vw;
+    margin: 1% 0 0 0;
+  }
+}
+
+h3 + p {
+  margin-top: 0;
+}
+@media only screen and (max-width: 320px) {
+  h3 {
+    font-size: 1.1em;
+    margin: 1% 0 0 0;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 321px) {
+  h3 {
+    font-size: 1.25em;
+    margin: 1% 0 0 0;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 900px) {
+  h3 {
+    font-size: 1.6vw;
+  }
+}
+
+h4 + p {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 320px) {
+  h4, p {
+    font-size: .9em;
+    margin: 1% 0 0 0;
+  }
+}
+@media only screen and (min-width: 321px) {
+  h4, p {
+    font-size: 1em;
+    margin: 1% 0 0 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h4, p {
+    font-size: 1vw;
+  }
+}
+
+h5 {
+  font-family: "Archer", "Georgia", serif;
+  font-size: .8em;
+  font-style: italic;
+}
+
+h6 {
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: 300;
+}
+h6 a {
+  color: inherit;
+  font-weight: 700;
 }
 
 /* header */
@@ -112,6 +249,35 @@ header p.edition {
   letter-spacing: .1em;
 }
 
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #d6d5d1;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+}
+nav a:hover {
+  color: #ffffff;
+}
+
+nav ul {
+  border-top: 2px solid #000000;
+}
+
+nav li {
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+}
+nav li:hover {
+  background-color: #bab9b6;
+}
+nav li:first-of-type {
+  border-left-width: 0px;
+}
+nav li:last-of-type {
+  border-right-width: 2px;
+}
+
 /* grid */
 * {
   box-sizing: border-box;
@@ -121,7 +287,33 @@ header p.edition {
   display: flex;
   flex-wrap: wrap;
 }
-.row .column {
+
+.column {
   flex: 1 1 0;
   min-width: 150px;
+}
+
+/* Scss Document */
+section {
+  border-bottom: 1px solid #d6d5d1;
+}
+@media only screen and (max-width: 320px) {
+  section {
+    padding: 6%;
+  }
+}
+@media only screen and (min-width: 321px) {
+  section {
+    padding: 4.5%;
+  }
+}
+@media only screen and (min-width: 500px) {
+  section {
+    padding: 3.5%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  section {
+    padding: 3%;
+  }
 }

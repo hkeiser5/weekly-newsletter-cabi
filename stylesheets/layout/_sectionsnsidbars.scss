@@ -1,0 +1,16 @@
+/* Scss Document */
+section {
+	border-bottom:1px solid $lightGrey;
+	@include smlphones {
+		padding:6%;
+	}
+	@include mostphones {
+		padding:4.5%;
+	}
+	@include phablets {
+		padding:3.5%;
+	}
+	@include smlLaptops {
+		padding:3%;
+	}
+}

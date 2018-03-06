@@ -5,43 +5,40 @@
 <title>Untitled Document</title>
 	<!--link to css style sheets including normalize-->
 	<link type="text/css" rel="stylesheet" href="stylesheets/normalize.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Suranna" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese)|Suranna" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="stylesheets/connection_main.css">
 	
 	<style type="text/css">
-		.column {
-			//min-width: 150px;
-		}
 	</style>
 
 </head>
 
 <body >
 
-	
+		<!--This asside to hold the outline of the page should auto populate with react, that would be nice-->
+	<aside class="outline" style="display:none;">
+		<ul>
+		</ul>
+	</aside>
+
 	
 	<header><!-- header should have logo, week, and season in it, should be responsive. Logo should be svg, week and season as html text should also contain search bar, and country origin-->
 		<div class="masthead" >
 			<p class="edition" >week 19 | s18</p>
 		<object type="image/svg+xml" data="includes/connection-logo.xml" class="conlogo"></object>
 		</div>
-	</header> 
-	
-	<nav>
-		<ul>
-			<li>prvious editions</li>
-			<li>cabi Library</li>
-			<li>cabi CLIO</li>
-			<li>cabionline.com</li>
-		</ul>
-	</nav>
-	
-	<!--This asside to hold the outline of the page should auto populate with react, that would be nice-->
-	<aside class="outline">
-		<ul>
-		</ul>
-	</aside>
-	
+
+		<nav>
+			<ul  class="row" style="justify-content: flex-start; list-style: none;padding: 0;background-color: #F3F3F0;margin:0;">
+				<li  style="padding:10px;"><a href="#" target="_blank">prvious editions</a></li>
+				<li  style="padding:10px;"><a href="#" target="_blank">cabi Library</a></li>
+				<li  style="padding:10px;"><a href="#" target="_blank">cabi CLIO</a></li>
+				<li  style="padding:10px;"><a href="#" target="_blank">cabionline.com</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
 	<!--letter from editor should not be collapsable -->
 	<section>
 		<h1>Flipping the Switch on Fear</h1>
@@ -169,6 +166,7 @@
 		
 		<h3>End of Season Sale Marketing Tools</h3>
 		<p>There are two tools you can use to share the final opportunity for your clients to purchase Fall ’17: the all-new eBlast in your Contact Manager and the customizable template found here!</p>
+		<h4>practice h4 here for design</h4>
 		<p>New Step for Successful Sending of the End of Season Sale Template
 		We heard reports of Stylists having difficulty emailing our new End of Season Sale Sample Tool to clients, and have uncovered an easy solution! After editing and saving changes to your word document template, save the tool as a PDF before attaching to an email to easily send your newly compressed tool. The End of Season Sale Template Guide on the Fashion Tools page has been updated to reflect this step.</p>
 		
@@ -200,6 +198,8 @@
 	</section>
 	
 	<footer>
+		<h5>this is a practice h5 for design purposes</h5>
+		<h6>this is a practice h6 for <a href="#">design purposes</a> and will be used for copyright info</h6>
 		<!--place copy right in here, and site map type of navigation--> 
 	</footer>
 </body>

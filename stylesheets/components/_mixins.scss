@@ -1,0 +1,51 @@
+/* Mixins */
+
+//breakpoint variables and mixins//
+$tvsize:2000;
+$desktop:1600;
+$lrgLaptops:1200;
+$smlLaptops:900;
+$tablets:700;
+$phablets:500;
+$mostPhones:320;
+
+@mixin smlphones {
+	@media only screen and (max-width:$mostPhones+'px'){
+		@content;
+	}
+}
+@mixin mostphones {
+	@media only screen and (min-width:($mostPhones + 1)+'px'){
+		@content;
+	}
+}
+@mixin phablets {
+	@media only screen and (min-width:($phablets)+'px'){
+		@content;
+	}
+}
+@mixin tablets {
+	@media only screen and (min-width:($tablets)+'px'){
+		@content;
+	}
+}
+@mixin smlLaptops {
+	@media only screen and (min-width:($smlLaptops)+'px'){
+		@content;
+	}
+}
+@mixin lrgLaptops {
+	@media only screen and (min-width:($lrgLaptops)+'px'){
+		@content;
+	}
+}
+@mixin desktop {
+	@media only screen and (min-width:($desktop)+'px'){
+		@content;
+	}
+}
+@mixin tvsize {
+	@media only screen and (min-width:($tvsize)+'px'){
+		@content;
+	}
+}

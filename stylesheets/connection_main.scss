@@ -1,13 +1,18 @@
 /* Scss Document */
+
+//partials (this has to come first as other elements will utilize this)
+@import "components/mixins";
+
 //base elements
 @import "base/colors";
 @import "base/type";
 
 //layout elements
 @import "layout/header";
-@import "layout/grid"
+@import "layout/grid";
+@import "layout/sectionsnsidbars";
 
-//partials
+
 
 
 //third party

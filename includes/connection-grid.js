@@ -22,9 +22,7 @@ function columnwidth(){
 		let myWidth = e.offsetWidth;
 		
 		//find direct children columns and how many there are
-		let myChildren = e.querySelectorAll(':scope >.column');//only selects the direct children of element
-		//turn nodelist into actual array
-		let allMyChildren = [].slice.call(myChildren);
+		let allMyChildren = e.querySelectorAll(':scope >.column');//only selects the direct children of element
 
 		let myLength = allMyChildren.length;
 		
@@ -36,40 +34,40 @@ function columnwidth(){
 			}
 		}
 		
-		
+		function setMinWidt(myarray,myvalue){
+			for (let i=0; i<myarray.length; i++){
+				myarray[i].style.minWidth = myvalue;
+			}
+		}
 		//determine width of columns based on factors, baseWidth, and myWidth
 		//first check if all columns will fit in space, if so do nothing
 		if(baseWidth*myLength < myWidth){
-			//do nothing everything fits 
+			let v = 150 + 'px'; //reset min width if enlarging
+			setMinWidt(allMyChildren,v); 
 			
 			//do some different math for prime number of columns, lets set it up so that it tries to evenly spread the groups of columns, like a row of 6 then 5, or 2 rows of 4 then a row of 3, ect.
-		} else if (myFactors.length === 2){
+		} else if (myWidth <= 320){
+			setMinWidt(allMyChildren,'100%');
+		} else if (myFactors.length === 2 ){
 				   for (let i=2; i < myLength; i++){
 					   let val = Math.ceil(Math.round(myLength/i));
 					   if (val*baseWidth < myWidth && val !== 1){ //if equal to one, let it default to normal widths/distributions
-						   for (let i=0; i<myLength; i++){
-							let v = 100/val;
-							allMyChildren[i].style.minWidth = v + '%';
-							}
+						   let v = 100/val + '%';
+						   setMinWidt(allMyChildren,v);
 						   break;
 					   }
 				   }
 				   
-		} else if (myWidth > baseWidth){ // here we determine how much space we have and divide columns accordingly
+		} else { // here we determine how much space we have and divide columns accordingly
 			for (let value of myFactors){
 				if (value*baseWidth < myWidth && myWidth > 320){ //if smaller than 320 only allow single columns
-						for (let i=0; i<myLength; i++){
-							let v = 100/value;
-							allMyChildren[i].style.minWidth = v + '%';
-						}
+					let v = 100/value + '%';	
+					setMinWidt(allMyChildren,v);
 					break; 
+					
 				}
 			}
-		} else {
-			for (let i=0; i<myLength; i++){
-				allMyChildren[i].style.minWidth = 100 + '%';
-			}
-		}
+		} 
 		
 	});
 }//end of column width function

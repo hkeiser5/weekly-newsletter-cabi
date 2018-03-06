@@ -125,13 +125,143 @@ $font-Modern: 'Suranna', 'Times New Roman', serif;
 p {//book
 	font-family: $font-archerB;
 	
-	b,strong {//semibold
+	b, strong {//semibold
 		font-family: $font-archer;
 		font-weight: 600;
 		font-style: normal;
+		em, i {
+			font-family: $font-archer;
+			font-weight: 600;
+			font-style: italic;
+		}
 	}
-	em,i {
+	em, i {
 		font-family: $font-archerB;
 		font-style: italic;
+		b, strong {
+			font-family: $font-archer;
+			font-weight: 600;
+			font-style: italic;	
+		}
 	}
 }
+h1,h2,h3,h4 {
+	font-family: $font-archer;
+	font-style: bold; 
+}
+h1 {
+	color: $cabiPink;
+	margin-top:0;
+	margin-bottom:0;
+	+ h2 {
+		margin:1% 0 0 0;
+	}
+	+ p {
+		margin-top:5%;
+	}
+	@include smlphones {
+		font-size:1.75em;	
+	}
+	@include mostphones {
+		font-size:1.75em;	
+	}
+	@include tablets {
+		font-size: 1.9em;
+	}
+	@include lrgLaptops {
+		font-size:3vw;
+	}
+}
+h2 {
+	+ p {
+		margin-top:5%;
+	}
+	@include smlphones {
+		font-size:1.25em;
+		margin: 2.5% 0 0 0;
+	}
+	@include mostphones {
+		font-size:1.25em;
+		margin: 2.5% 0 0 0;	
+	}
+	@include tablets {
+		font-size: 1.5em;
+	}
+	@include smlLaptops {
+		font-size:2vw;
+		margin: 1% 0 0 0;
+	}
+}
+h3 {
+	+ p {
+		margin-top:0;
+	}
+	@include smlphones {
+		font-size:1.1em;
+		margin: 1% 0 0 0;
+		font-weight: 400;
+	}
+	@include mostphones {
+		font-size: 1.25em;
+		margin: 1% 0 0 0;
+		font-weight: 400;
+	}
+	@include smlLaptops {
+		font-size:1.6vw;
+	}
+}
+h4 + p {
+	margin-top:0;
+}
+h4, p {
+	@include smlphones {
+		font-size:.9em;
+		margin: 1% 0 0 0;
+	}
+	@include mostphones {
+		font-size: 1em;
+		margin: 1% 0 0 0;
+	}
+	@include lrgLaptops {
+		font-size:1vw;
+	}
+}
+.includesorder {
+	@include smlphones {
+	}
+	@include mostphones {
+	}
+	@include phablets {
+		
+	}
+	@include tablets {
+	}
+	@include smlLaptops {
+	}
+	@include lrgLaptops {
+
+	}
+	@include desktop {
+		
+	}
+	@include tvsize {
+		
+	}	
+}
+h5 {
+	font-family: $font-archer;
+	font-size: .8em;
+	font-style: italic;
+}
+h6 {
+	font-family: $font-Roboto;
+	text-transform: uppercase;
+	font-size:.7em;
+	font-weight: 300;
+	a {
+		color:inherit;
+		font-weight: 700;
+	}
+}
+
+
