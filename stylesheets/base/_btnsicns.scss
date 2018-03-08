@@ -1,0 +1,25 @@
+/* buttons and icons */
+.close {
+	color:$cabiGrey;
+	font-size: 130%;
+	text-align: right;
+	.close-icn {
+		cursor: pointer;
+	}
+}
+.arrow {
+	font-size: 110%;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-left:1%;
+	transform: rotate(0deg);
+	transition: transform .5s;
+}
+.accordian {
+	cursor: pointer;
+}
+.slidedown {
+	max-height:0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}

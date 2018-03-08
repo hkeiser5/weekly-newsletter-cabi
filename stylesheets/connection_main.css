@@ -118,7 +118,7 @@ h1 + h2 {
   margin: 1% 0 0 0;
 }
 h1 + p {
-  margin-top: 5%;
+  margin-top: .5%;
 }
 @media only screen and (max-width: 320px) {
   h1 {
@@ -142,7 +142,7 @@ h1 + p {
 }
 
 h2 + p {
-  margin-top: 5%;
+  margin-top: .5%;
 }
 @media only screen and (max-width: 320px) {
   h2 {
@@ -230,6 +230,35 @@ h6 a {
   font-weight: 700;
 }
 
+/* buttons and icons */
+.close {
+  color: #bab9b6;
+  font-size: 130%;
+  text-align: right;
+}
+.close .close-icn {
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 110%;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 1%;
+  transform: rotate(0deg);
+  transition: transform .5s;
+}
+
+.accordian {
+  cursor: pointer;
+}
+
+.slidedown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
 /* header */
 header div.masthead {
   width: 64%;
@@ -249,6 +278,9 @@ header p.edition {
   letter-spacing: .1em;
 }
 
+nav {
+  border-bottom: 2px solid #000000;
+}
 nav a {
   display: inline-block;
   text-decoration: none;
@@ -259,11 +291,16 @@ nav a {
 nav a:hover {
   color: #ffffff;
 }
-
 nav ul {
-  border-top: 2px solid #000000;
+  visibility: hidden;
+  height: 0;
 }
-
+@media only screen and (min-width: 700px) {
+  nav ul {
+    visibility: visible;
+    height: auto;
+  }
+}
 nav li {
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;

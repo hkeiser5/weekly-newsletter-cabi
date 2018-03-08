@@ -157,7 +157,7 @@ h1 {
 		margin:1% 0 0 0;
 	}
 	+ p {
-		margin-top:5%;
+		margin-top:.5%;
 	}
 	@include smlphones {
 		font-size:1.75em;	
@@ -174,7 +174,7 @@ h1 {
 }
 h2 {
 	+ p {
-		margin-top:5%;
+		margin-top:.5%;
 	}
 	@include smlphones {
 		font-size:1.25em;

@@ -21,31 +21,39 @@ header {
 	}
 }
 
-nav a {
-	display: inline-block;
-	
-	text-decoration: none;
-	color: $lightGrey;
-	text-transform: uppercase;
-	font-family: $font-Roboto;
-	&:hover {
-		color: $white;	
+nav {
+	border-bottom:2px solid #000000;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: $lightGrey;
+		text-transform: uppercase;
+		font-family: $font-Roboto;
+		&:hover {
+			color: $white;
+		}
 	}
-	
-}
-nav ul {
-	border-top:2px solid #000000;
-}
-nav li {
-	border-left: 1px solid #ffffff;
-	border-right: 1px solid #ffffff;
-	&:hover {
-		background-color: $cabiGrey;
+	ul {
+		visibility: hidden;
+		height: 0;
+		@include tablets {
+			visibility: visible;
+			height: auto;
+		}
 	}
-	&:first-of-type {
-		border-left-width: 0px;
+	li {
+		border-left: 1px solid #ffffff;
+		border-right: 1px solid #ffffff;
+		&:hover {
+			background-color: $cabiGrey;
+		}
+		&:first-of-type {
+			border-left-width: 0px;
+		}
+		&:last-of-type {
+			border-right-width: 2px;
+		}
 	}
-	&:last-of-type {
-		border-right-width: 2px;
-	}
-}
+}//close nav
+		
+

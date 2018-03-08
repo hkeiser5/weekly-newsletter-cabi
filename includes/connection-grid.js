@@ -4,9 +4,6 @@
 'use strict';
 
 
-
-
-
 /* grid algorythm that determines how many .column elements in a .row. sees how big the row is. then determines width of the .column elements based on space, and if it has any denominators based on amount to section the widths in even amounts.*/
 
 function columnwidth(){
@@ -73,6 +70,53 @@ function columnwidth(){
 }//end of column width function
 
 
+//accordian functions for slide down information in sections, or anywhere.
+function accordian(){
+//add event listener to all arrow icons
+	let allMyArrows = document.querySelectorAll('.accordian');
+		allMyArrows.forEach(function(e){
+			e.addEventListener('click', slidedwn, false);
+		});
+	
+	function slidedwn(){
+		let mySlider;
+		let arrow;
+		if(event.target.className === '.accordian') {
+		   		mySlider = event.target.nextElementSibling;//select the adjacent slider element
+				arrow = event.target.querySelector('.arrow');//selects the arrow for manipulation
+		   } else { //in the event that a child of .accordian is clicked instead of the element called .accordian
+			   let newET = event.target.closest('.accordian');
+			   arrow = newET.querySelector('.arrow');
+			   mySlider = newET.nextElementSibling;
+		   }
+		if (mySlider.style.maxHeight){
+			mySlider.style.maxHeight = null;
+			arrow.style.transform = 'rotate(0deg)';
+		} else {
+			mySlider.style.maxHeight = mySlider.scrollHeight + 'px';
+			arrow.style.transform = 'rotate(90deg)';
+		}
+	}//end slidedwn
+	
+	//add event listener to all close icons
+	let allMyClosures = document.querySelectorAll('.close');
+		allMyClosures.forEach(function(e){
+			e.addEventListener('click', slideup, false);
+		});
+	
+	function slideup(){ //find appropiate .slidedown and change its display
+		let mySlider = event.target.closest('.slidedown');
+		let arrowMom  = mySlider.previousElementSibling;
+		let arrow =  arrowMom.querySelector('.arrow');
+		arrow.style.transform = 'rotate(0deg)';
+		mySlider.style.maxHeight = null;
+	}//end slideup
+}//end accoridan function
+
+
+
+
+
 //timer function to use in things like window resize.
 var timeout;
 
@@ -105,6 +149,7 @@ window.addEventListener('resize', function  () {
 
 function loadfunctions(){
 	columnwidth();
+	accordian();
 }
 
 window.onload = loadfunctions();
