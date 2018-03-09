@@ -75,42 +75,43 @@ function accordian(){
 //add event listener to all arrow icons
 	let allMyArrows = document.querySelectorAll('.accordian');
 		allMyArrows.forEach(function(e){
-			e.addEventListener('click', slidedwn, false);
+			let mySlider = e.nextElementSibling;
+			let myArrow = e.querySelector('.arrow');
+			e.addEventListener('click', function(){
+				togglesld(mySlider);
+				rotatearrow(myArrow);}, 
+				false);
 		});
 	
-	function slidedwn(){
-		let mySlider;
-		let arrow;
-		if(event.target.className === '.accordian') {
-		   		mySlider = event.target.nextElementSibling;//select the adjacent slider element
-				arrow = event.target.querySelector('.arrow');//selects the arrow for manipulation
-		   } else { //in the event that a child of .accordian is clicked instead of the element called .accordian
-			   let newET = event.target.closest('.accordian');
-			   arrow = newET.querySelector('.arrow');
-			   mySlider = newET.nextElementSibling;
-		   }
+	function togglesld(mySlider){
 		if (mySlider.style.maxHeight){
 			mySlider.style.maxHeight = null;
-			arrow.style.transform = 'rotate(0deg)';
 		} else {
 			mySlider.style.maxHeight = mySlider.scrollHeight + 'px';
+		}
+	}//end togglesld
+	
+	function rotatearrow(arrow){//arrow must be a seperate item class from the icon from font awesome to work. good to know
+		if (arrow.style.transform === 'rotate(90deg)'){
+			arrow.style.transform = 'rotate(0deg)';
+		} else {
 			arrow.style.transform = 'rotate(90deg)';
 		}
-	}//end slidedwn
+	}
 	
 	//add event listener to all close icons
 	let allMyClosures = document.querySelectorAll('.close');
 		allMyClosures.forEach(function(e){
-			e.addEventListener('click', slideup, false);
+			let mySlider = e.closest('.slidedown');
+			let myArrowMom = mySlider.previousElementSibling;
+			let myArrow =  myArrowMom.querySelector('.arrow');
+			e.addEventListener('click', function(){
+				togglesld(mySlider);
+				rotatearrow(myArrow);}, 
+				false);
 		});
 	
-	function slideup(){ //find appropiate .slidedown and change its display
-		let mySlider = event.target.closest('.slidedown');
-		let arrowMom  = mySlider.previousElementSibling;
-		let arrow =  arrowMom.querySelector('.arrow');
-		arrow.style.transform = 'rotate(0deg)';
-		mySlider.style.maxHeight = null;
-	}//end slideup
+	
 }//end accoridan function
 
 
