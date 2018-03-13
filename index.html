@@ -14,7 +14,7 @@
 
 </head>
 
-<body >
+<body>
 
 		<!--This asside to hold the outline of the page should auto populate with react, that would be nice-->
 	<aside class="outline" style="display:none;">
@@ -144,18 +144,66 @@
 		<div class="slidedown">
 		<h2>December 4-December 29</h2><!-- calendar inserted here-->
 		<h2>upcoming sharing cabi webinar</h2>
-		<!-- there has got to be a way for the computer to computate all times for different zones, also a way for a user to just look for their leader-->
-		<dl>
-			<dt>Becky Lester</dt><dd>Wednesday, December 6<br>2:00 p.m. PT, 3:00 p.m. MT, 4:00 p.m. CT, 5:00 p.m. ET, 10:00 p.m. GMT</dd>
-			<dt>Michelle Beyers</dt><dd>Wednesday, December 6<br>4:00 p.m. PT, 5:00 p.m. MT, 6:00 p.m. CT, 7:00 p.m. ET, 12:00 a.. GMT(thursday)</dd>
-			<dt>Kim Carpenter</dt><dd>Wednesday, December 6<br>6:00 p.m. PT</dd>
-			<dt>Kim Carpenter</dt><dd>Thursday, December 7<br>8:00 a.m. PT</dd>
-			<dt>Ginny Connors</dt><dd>Monday, December 11<br>3:00 p.m. PT</dd>
-			<dt>Syd Ryan</dt><dd>Monday, December 11<br>7:00 a.m. PT</dd>
-			<dt>Kim Carpenter</dt><dd>Tuesday, December 12<br>6:00 a.m. PT</dd>
-			<dt>Karen Benton</dt><dd>Tuesday, December 12<br>8:00 a.m. PT</dd>
-			<dt>Karen Kohlan</dt><dd>Thursday, December 14<br>9:00 a.m. PT</dd>
-		</dl>
+			
+		
+		<div class="drpset"><!--group of dropdowns to be used together consecutively-->
+		<!-- choose a speaker-->
+		<form>
+			<select name="speaker">
+				<option value="0">Choose a speaker</option>
+				<option value="Becky Lester">Becky Lester</option>
+				<option value="Ginny Connors">Ginny Connors</option>
+				<option value="Karen Benton">Karen Benton</option>
+				<option value="Karen Kohlan">Karen Kohlan</option>
+				<option value="Kim Carpenter">Kim Carpenter</option>
+				<option value="Michelle Beyers">Michelle Beyers</option>
+				<option value="Syd Ryan">Syd Ryan</option>
+			</select>		
+			
+		<!-- choose a timezone-->
+			<select name="timezone" >
+			<option value="0">Choose a timezone</option>
+				<option value ="PT">PT</option>
+				<option value ="MT">MT</option>
+				<option value ="CT">CT</option>
+				<option value ="ET">ET</option>
+				<option value ="GMT">GMT</option>
+			</select>
+			
+			
+		<!-- choose a date and time, all times here are PT, use a multiplier to change these, in real setting it would just pull the info from a server table, as well as create all of these lists-->
+			<select name="choose date" >
+				<option value="0">Choose a date and time</option>
+				<optgroup label="michelle beyers">
+					<option value="17, 11, 6, 4, 0, PT" ><span class="date">Wednesday, December 6</span> | <span class="time">4:00 p.m.</span></option>
+				</optgroup>
+				<optgroup label="becky lester">
+					<option value="17, 11, 6, 2, 0, PT" ><span class="date">Wednesday, December 6</span> | <span class="time">2:00 p.m.</span></option>
+				</optgroup>
+				<optgroup label="kim carpenter">
+					<option value="17, 11, 6, 18, 0, PT" ><span class="date">Wednesday, December 6</span> | <span class="time">6:00 p.m.</span></option>
+					<option value="17, 11, 7, 8, 0, PT" ><span class="date">Thursday, December 7</span> | <span class="time">8:00 a.m.</span></option>
+					<option value="17, 11, 12, 6, 0, PT" ><span class="date">Tuesday, December 12</span> | <span class="time">6:00 a.m.</span></option>
+				</optgroup>
+				<optgroup label="ginny connors">
+					<option value="17, 11, 11, 15, 0, PT" ><span class="date">Monday, December 11</span> | <span class="time">3:00 p.m.</span></option>
+				</optgroup>
+				<optgroup label="syd ryan">
+					<option value="17, 11, 11, 7, 0, PT" ><span class="date">Monday, December 11</span> | <span class="time">7:00 a.m.</span></option>
+				</optgroup>
+				<optgroup label="karen benton">
+					<option value="17, 11, 12, 8, 0, PT" ><span class="date">Tuesday, December 12</span> | <span class="time">8:00 a.m.</span></option>
+				</optgroup>
+				<optgroup label="karen kohlan">
+					<option value="17, 11, 14, 9, 0, PT" ><span class="date">Thursday, December 14</span> | <span class="time">9:00 a.m.</span></option>
+				</optgroup>
+			</select>
+			
+
+		
+		</form>
+		</div><!--end drpset-->
+	
 		
 		<h2>It’s Nearly Time to Re-Install CLIO GO</h2>
 		<p>As part of keeping our CLIO GO app secure, Apple requires an annual security redistribution, and ours is happening on December 13! So, if you’re using CLIO GO on an iPhone or iPad, you will need to re-install the app on or after December 13, or you won’t be able to use it at your next show.</p>

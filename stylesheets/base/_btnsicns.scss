@@ -1,4 +1,8 @@
 /* buttons and icons */
+
+
+
+//elements used in accordians
 .close {
 	color:$cabiGrey;
 	font-size: 130%;
@@ -23,3 +27,80 @@
 	overflow: hidden;
 	transition: max-height 0.5s ease-out;
 }
+
+//dropdown select elements
+.select-header {
+	display: flex;
+	padding: 15px;
+	border: 1px solid $white;
+	width: 100%;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.select-arrow {
+	z-index: 1;
+	font-size: 110%;
+}
+.select {
+	position: relative;
+	width: 250px;
+	color: $darkGrey;
+	background-color: $offWhite;
+	margin-top:20px;
+	font-family: $font-Roboto;
+	border-radius: 5px;
+	display: inline-block;
+	.active, &:focus {
+		border: 2px solid $charcoal;
+	}
+	.optionList {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		width:100%;
+		background-color: inherit;
+		z-index: 2;
+		.hidden {
+			max-height: 0;
+			visibility: hidden;
+		}
+	}
+	.value {
+		overflow: hidden;
+		white-space  : nowrap;
+  		text-overflow: ellipsis;
+	}
+}
+
+.option {
+	display: inline-block;
+	padding: 15px;
+	border: 1px solid $white;
+	width: 100%;
+	list-style: none;
+	&:hover, .highlight {
+		background-color: $lightGrey;
+	}
+}
+
+
+.optionGroup {
+	padding: 0;
+	margin:0;
+	border: none;
+	list-style: none;
+	ul {
+		margin:0;
+		padding:0;
+	}
+	&>div {
+		color:$cabiGrey;
+		padding:15px;
+		width:100%;
+		/*display:none;--going to do this js instead as I might want optiongroups other places to show*/
+	}
+}
+
+

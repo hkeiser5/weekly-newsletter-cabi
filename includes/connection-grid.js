@@ -115,6 +115,82 @@ function accordian(){
 }//end accoridan function
 
 
+/*select box widget here is the heirarchy of the select box classes:
+   div.select (holds everything)
+   		div.select-header (contains span.value and div.select-arrow)
+		ul.optionList
+			li.option or li.optionGroup (this then contains a ul without class that holds all li.option)
+*/
+//first find our selects and replace them with the div code
+function replaceSelects(){
+	let mySelects = document.querySelectorAll('select');
+	mySelects.forEach(function(e){
+		let myDefault = e[0].innerHTML;//options default value
+		let myName = e.getAttribute('name');
+		let selectDiv = document.createElement('div');//new div for select
+		selectDiv.classList.add('select');
+		selectDiv.setAttribute('data-name', myName);
+		let myNewDefault = document.createElement('div');
+		myNewDefault.classList.add('select-header');//new div for select-header
+		let myDefaultSpan = document.createElement('span');//new span for default value
+		myDefaultSpan.innerHTML = myDefault;
+		let myNewArrow = document.createElement('div');//new div for arrow
+		myNewArrow.classList.add('select-arrow');
+		myNewArrow.innerHTML = '<i class="fas fa-caret-right"></i>';//font awesome arrow
+		myNewDefault.appendChild(myDefaultSpan);
+		myNewDefault.appendChild(myNewArrow);
+		selectDiv.appendChild(myNewDefault);
+		let myNewList = document.createElement('ul');//new ul for the options------
+		myNewList.classList.add('optionList');
+		//now add all option/optionGroup uls/lis to add to myNewList
+		for (let i=1; i <e.length; i++){//start at 1 as 0 was the first default option
+			let nodeHTML = e[i].innerHTML;
+			let nodeValue = e[i].getAttribute('value');
+			let myNewOption = document.createElement('li');
+			myNewOption.innerHTML = nodeHTML;
+			myNewOption.setAttribute('data-value', nodeValue);
+			myNewOption.classList.add('option');
+			
+			if (e[i].parentNode.label !== undefined){ //this option is part of an optgroup
+				let optGroupLabel = e[i].parentNode.label;
+				//check to see if we have an optgroup div already
+				let grpCheck = myNewList.querySelector('[data-group="'+optGroupLabel+'"]');
+				if (grpCheck !== null){
+					grpCheck.parentElement.appendChild(myNewOption);
+				} else {
+					let groupLi = document.createElement('li');//this will become the optiongroup li that holds ul
+					groupLi.classList.add('optionGroup');
+					let groupUl = document.createElement('ul');
+					let labelDiv = document.createElement('div');
+					labelDiv.setAttribute('data-group', optGroupLabel);
+					labelDiv.innerHTML = e[i].parentNode.label;
+					groupLi.appendChild(labelDiv);
+					groupUl.appendChild(myNewOption);
+					groupLi.appendChild(groupUl);
+					myNewList.appendChild(groupLi);
+				}
+				
+			} else {
+				myNewList.appendChild(myNewOption);
+			}
+			
+		}
+		selectDiv.appendChild(myNewList);//select div now has all elements added and is ready to replace select in DOM
+		let myParent = e.parentElement;
+		for (let k = 0; k < myParent.length; k++){
+			if (myParent[k] === e){
+				//myParent.removeChild(myParent[k]);
+				myParent.replaceChild(selectDiv, myParent[k]);
+				break;
+			}
+		}
+	});
+}//This completes creating a new select dropdown out of divs from select tags in doc and removes previous selects.
+
+
+
+//handling multiple select widgets in the dates and times of webinars
+
 
 
 
@@ -151,6 +227,7 @@ window.addEventListener('resize', function  () {
 function loadfunctions(){
 	columnwidth();
 	accordian();
+	replaceSelects();
 }
 
 window.onload = loadfunctions();

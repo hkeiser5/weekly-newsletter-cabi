@@ -259,6 +259,81 @@ h6 a {
   transition: max-height 0.5s ease-out;
 }
 
+.select-header {
+  display: flex;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.select-arrow {
+  z-index: 1;
+  font-size: 110%;
+}
+
+.select {
+  position: relative;
+  width: 250px;
+  color: #515151;
+  background-color: #f3f3f0;
+  margin-top: 20px;
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+  border-radius: 5px;
+  display: inline-block;
+}
+.select .active, .select:focus {
+  border: 2px solid #2b2b2a;
+}
+.select .optionList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: inherit;
+  z-index: 2;
+}
+.select .optionList .hidden {
+  max-height: 0;
+  visibility: hidden;
+}
+.select .value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.option {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  width: 100%;
+  list-style: none;
+}
+.option:hover, .option .highlight {
+  background-color: #d6d5d1;
+}
+
+.optionGroup {
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style: none;
+}
+.optionGroup ul {
+  margin: 0;
+  padding: 0;
+}
+.optionGroup > div {
+  color: #bab9b6;
+  padding: 15px;
+  width: 100%;
+  /*display:none;--going to do this js instead as I might want optiongroups other places to show*/
+}
+
 /* header */
 header div.masthead {
   width: 64%;
