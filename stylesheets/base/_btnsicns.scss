@@ -1,6 +1,27 @@
 /* buttons and icons */
 
-
+//buttons
+button  {
+	padding:15px;
+	font-family: $font-Roboto;
+	font-weight: 400;
+	font-size: .9em;
+	text-transform: uppercase;
+	color: $white;
+	transition-duration: 0.4s;
+	&.charcoal {
+		background-color: $charcoal;
+		border:1px solid $charcoal;
+	}
+	&.cabipink {
+		background-color: $cabiPink;
+		border:1px solid $cabiPink;
+	}
+	&:hover {
+		color: $charcoal;
+		background-color: $white;
+	}
+}
 
 //elements used in accordians
 .close {
@@ -26,9 +47,21 @@
 	max-height:0;
 	overflow: hidden;
 	transition: max-height 0.5s ease-out;
-}
+}//end accordians
 
 //dropdown select elements
+.drpset {
+	text-align: center;
+	button {
+		margin:20px auto;
+		
+		&.hidden {
+		max-height: 0;
+		visibility: hidden;
+		margin:0;
+		}
+	}
+}
 .select-header {
 	display: flex;
 	padding: 15px;
@@ -40,18 +73,31 @@
 .select-arrow {
 	z-index: 1;
 	font-size: 110%;
+	transform: rotate(0deg);
+	transition: transform .5s;
+	&.active, &:focus {
+		transform: rotate(90deg);
+	}
 }
 .select {
 	position: relative;
 	width: 250px;
 	color: $darkGrey;
 	background-color: $offWhite;
-	margin-top:20px;
+	margin: 10px auto;
 	font-family: $font-Roboto;
 	border-radius: 5px;
-	display: inline-block;
-	.active, &:focus {
-		border: 2px solid $charcoal;
+	display: block;
+	max-height: 1000;
+	transition: max-height 0.6s ease-out;
+	&.hidden{
+		max-height: 0;
+		visibility: hidden;
+		margin:0;
+	}
+	&.active, &:focus {
+		border: 1px solid $charcoal;
+		box-shadow: 0px 0px 6px $cabiPink;
 	}
 	.optionList {
 		position: absolute;
@@ -62,9 +108,13 @@
 		width:100%;
 		background-color: inherit;
 		z-index: 2;
-		.hidden {
+		max-height: 1000px;//reset this with js
+		transition: max-height 0.6s ease-out;
+		
+		&.hidden {
 			max-height: 0;
-			visibility: hidden;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
 		}
 	}
 	.value {
@@ -99,8 +149,8 @@
 		color:$cabiGrey;
 		padding:15px;
 		width:100%;
-		/*display:none;--going to do this js instead as I might want optiongroups other places to show*/
+		display:none;
 	}
 }
-
+//end select drpdown styling
 

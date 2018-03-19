@@ -231,6 +231,28 @@ h6 a {
 }
 
 /* buttons and icons */
+button {
+  padding: 15px;
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+  font-weight: 400;
+  font-size: .9em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition-duration: 0.4s;
+}
+button.charcoal {
+  background-color: #2b2b2a;
+  border: 1px solid #2b2b2a;
+}
+button.cabipink {
+  background-color: #ff99a7;
+  border: 1px solid #ff99a7;
+}
+button:hover {
+  color: #2b2b2a;
+  background-color: #ffffff;
+}
+
 .close {
   color: #bab9b6;
   font-size: 130%;
@@ -259,6 +281,18 @@ h6 a {
   transition: max-height 0.5s ease-out;
 }
 
+.drpset {
+  text-align: center;
+}
+.drpset button {
+  margin: 20px auto;
+}
+.drpset button.hidden {
+  max-height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
 .select-header {
   display: flex;
   padding: 15px;
@@ -271,6 +305,11 @@ h6 a {
 .select-arrow {
   z-index: 1;
   font-size: 110%;
+  transform: rotate(0deg);
+  transition: transform .5s;
+}
+.select-arrow.active, .select-arrow:focus {
+  transform: rotate(90deg);
 }
 
 .select {
@@ -278,13 +317,21 @@ h6 a {
   width: 250px;
   color: #515151;
   background-color: #f3f3f0;
-  margin-top: 20px;
+  margin: 10px auto;
   font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
   border-radius: 5px;
-  display: inline-block;
+  display: block;
+  max-height: 1000;
+  transition: max-height 0.6s ease-out;
 }
-.select .active, .select:focus {
-  border: 2px solid #2b2b2a;
+.select.hidden {
+  max-height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+.select.active, .select:focus {
+  border: 1px solid #2b2b2a;
+  box-shadow: 0px 0px 6px #ff99a7;
 }
 .select .optionList {
   position: absolute;
@@ -295,10 +342,13 @@ h6 a {
   width: 100%;
   background-color: inherit;
   z-index: 2;
+  max-height: 1000px;
+  transition: max-height 0.6s ease-out;
 }
-.select .optionList .hidden {
+.select .optionList.hidden {
   max-height: 0;
-  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
 .select .value {
   overflow: hidden;
@@ -331,7 +381,7 @@ h6 a {
   color: #bab9b6;
   padding: 15px;
   width: 100%;
-  /*display:none;--going to do this js instead as I might want optiongroups other places to show*/
+  display: none;
 }
 
 /* header */
